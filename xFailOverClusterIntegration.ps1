@@ -46,11 +46,13 @@
             -OutPath '.\xFailOverClusterIntegrationConfig\MOF
 #>
 
-Configuration xFailOverClusterIntegration
+Configuration DomainController
 {
     Import-DscResource -ModuleName 'PSDscResources'
+    Import-DscResource -ModuleName 'xComputerManagement'
+    Import-DscResource -ModuleName 'xActiveDirectory'
 
-    Node san01
+    Node $AllNodes.NodeName
     {
         Group testGroup
         {
@@ -60,13 +62,11 @@ Configuration xFailOverClusterIntegration
     }
 }
 
-Configuration DomainController
+Configuration StorageServer
 {
     Import-DscResource -ModuleName 'PSDscResources'
-    Import-DscResource -ModuleName 'xComputerManagement'
-    Import-DscResource -ModuleName 'xActiveDirectory'
 
-    Node dc01
+    Node $AllNodes.NodeName
     {
         Group testGroup
         {
