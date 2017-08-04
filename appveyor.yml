@@ -1,0 +1,24 @@
+version: 1.0.{build}.0
+image: Visual Studio 2017
+clone_folder: c:\projects\$(APPVEYOR_PROJECT_NAME)
+environment:
+  TestResultsUploadURI: https://ci.appveyor.com/api/testresults/nunit/$(APPVEYOR_JOB_ID)
+  BuildFolder: $(APPVEYOR_BUILD_FOLDER)
+  ProjectName: $(APPVEYOR_PROJECT_NAME)
+  ProjectID: $(APPVEYOR_POJECT_ID)
+  BuildID: $(APPVEYOR_BUILD_ID)
+matrix:
+  fast_finish: true
+install:
+  - git clone https://github.com/PlagueHO/DscConfiguration.Tests
+  - ps: |
+        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.205 -Force | Out-Null
+        Install-Module InvokeBuild -Force
+build_script:
+  - ps: |
+        if (Test-Path -Path .\.build.ps1) {
+          Invoke-Build -Summary
+        }
+        else {
+          Invoke-Build -File .\DscConfiguration.Tests\.build.ps1 -Summary
+        }
