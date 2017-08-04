@@ -44,7 +44,7 @@
             -OutPath '.\xFailOverCluster-IntegrationConfig\MOF
 #>
 
-configuration xFailOverCluster-IntegrationConfig
+Configuration xFailOverCluster-Integration
 {
     Import-DscResource -ModuleName 'PSDscResources'
 
