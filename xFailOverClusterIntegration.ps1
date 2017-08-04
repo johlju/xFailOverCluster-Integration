@@ -31,6 +31,8 @@
 
 #Requires -Module xFailOverClusterIntegrationModule
 #Requires -Module PSDscResources
+#Requires -Module xComputerManagement
+#Requires -Module xActiveDirectory
 
 <#
     .DESCRIPTION
@@ -48,7 +50,23 @@ Configuration xFailOverClusterIntegration
 {
     Import-DscResource -ModuleName 'PSDscResources'
 
-    Node $AllNodes.NodeName
+    Node san01
+    {
+        Group testGroup
+        {
+            Ensure    = 'Present'
+            GroupName = $Node.GroupName
+        }
+    }
+}
+
+Configuration DomainController
+{
+    Import-DscResource -ModuleName 'PSDscResources'
+    Import-DscResource -ModuleName 'xComputerManagement'
+    Import-DscResource -ModuleName 'xActiveDirectory'
+
+    Node dc01
     {
         Group testGroup
         {
