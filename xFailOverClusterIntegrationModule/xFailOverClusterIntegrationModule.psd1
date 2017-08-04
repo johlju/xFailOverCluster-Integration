@@ -1,5 +1,5 @@
 #
-# Module manifest for module 'xFailOverCluster-Integration'
+# Module manifest for module 'xFailOverClusterIntegration'
 #
 @{
     # Script module or binary module file associated with this manifest.

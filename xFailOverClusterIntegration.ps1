@@ -29,7 +29,7 @@
 
 #>
 
-#Requires -Module xFailOverCluster-IntegrationModule
+#Requires -Module xFailOverClusterIntegrationModule
 #Requires -Module PSDscResources
 
 <#
@@ -39,12 +39,12 @@
         contains supporting assets.
 
     .EXAMPLE
-        xFailOverCluster-IntegrationConfig `
-            -ConfigurationData '.\ConfigurationData\xFailOverCluster-IntegrationConfig.ConfigData.psd1
-            -OutPath '.\xFailOverCluster-IntegrationConfig\MOF
+        xFailOverClusterIntegration `
+            -ConfigurationData '.\ConfigurationData\xFailOverClusterIntegrationConfig.ConfigData.psd1
+            -OutPath '.\xFailOverClusterIntegrationConfig\MOF
 #>
 
-Configuration xFailOverCluster-Integration
+Configuration xFailOverClusterIntegration
 {
     Import-DscResource -ModuleName 'PSDscResources'
 

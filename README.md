@@ -1,4 +1,4 @@
-# xFailOverCluster-Integration
+# xFailOverClusterIntegration
 
 ** THIS IS UNDER DEVELOPMENT **
 
