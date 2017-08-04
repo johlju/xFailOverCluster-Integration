@@ -13,9 +13,9 @@
 
 .TAGS DSC Config
 
-.LICENSEURI https://github.com/johlju/xFailOverCluster-Integration/blob/master/LICENSE
+.LICENSEURI https://github.com/johlju/xFailOverClusterIntegration/blob/master/LICENSE
 
-.PROJECTURI https://github.com/johlju/xFailOverCluster-Integration
+.PROJECTURI https://github.com/johlju/xFailOverClusterIntegration
 
 .ICONURI
 

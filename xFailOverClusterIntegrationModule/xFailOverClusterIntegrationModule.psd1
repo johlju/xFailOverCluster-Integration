@@ -94,10 +94,10 @@
             Tags       = 'DSC', 'Config'
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/johlju/xFailOverCluster-Integration/blob/master/LICENSE'
+            LicenseUri = 'https://github.com/johlju/xFailOverClusterIntegration/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/johlju/xFailOverCluster-Integration'
+            ProjectUri = 'https://github.com/johlju/xFailOverClusterIntegration'
 
             # A URL to an icon representing this module.
             # IconUri = ''
