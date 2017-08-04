@@ -10,7 +10,11 @@ environment:
 matrix:
   fast_finish: true
 install:
-  - git clone https://github.com/PlagueHO/DscConfiguration.Tests
+  - git clone https://github.com/johlju/DscConfiguration.Tests
+  - ps: Push-Location
+  - ps: cd "$env:APPVEYOR_BUILD_FOLDER\DscConfiguration.Tests"
+  - git checkout fixes-issues
+  - ps: Pop-Location
   - ps: |
         Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.205 -Force | Out-Null
         Install-Module InvokeBuild -Force
